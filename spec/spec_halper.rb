@@ -1,4 +1,6 @@
 require "bundler/setup"
+require "bundler/setup"
+require "webmock/rspec"
 require "payments/display_payments"
 require "payments"
 
