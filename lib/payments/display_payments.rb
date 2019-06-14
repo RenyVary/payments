@@ -1,6 +1,5 @@
-
 module Payments
-  class DisplayPayments <executor
+  class DisplayPayments
     attr_reader :token, :wallet, :number, :operation
 
     def initialize(params = {token: "", wallet: ""})
@@ -8,8 +7,8 @@ module Payments
       @wallet = params[:wallet]
     end
 
-    def call(number: "10", operation: "all")
-      uri = URI("https://edge.qiwi.com/payment-history/v2/persons/#{@wallet}/payments?rows=#{number}&operation=#{operation.}") 
+    def call(number: "10", operation: "ALL")
+      uri = URI("https://edge.qiwi.com/payment-history/v2/persons/#{@wallet}/payments?rows=#{number}&operation=#{operation}") 
       
       get_result(make_request(uri))
     end 

@@ -1,6 +1,7 @@
 module Payments
   class Webhooks
   	def initialize(key)
+  	  raise ArgumentError, 'Secret key must be set' unless key
   	  @key = key
   	end
 
